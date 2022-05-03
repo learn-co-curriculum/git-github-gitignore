@@ -216,6 +216,12 @@ repository, you could add this to the `.gitignore`:
 !log.txt
 ```
 
+## Check for Understanding
+
+Before moving on to the next lesson, check for your understanding of this
+material by describing in your own words what a `.gitignore` file enables us to
+do and why it is important.
+
 ## Summary
 
 Sometimes you want Git to ignore certain files. The common reasons for this are

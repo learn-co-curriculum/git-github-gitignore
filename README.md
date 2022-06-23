@@ -67,8 +67,6 @@ repositories. If you try to push a file that exceeds the 100 MB threshold, you
 will get an error message and the push will fail. An example might be large data
 files.
 
-[size-limits]: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
-
 ## `.gitignore` Syntax
 
 Now that we understand some reasons that we might want to ignore certain files,
@@ -109,8 +107,6 @@ Alternatively, if we want to make sure that our `secrets` file is ignored
 whether it's stored as YML or JSON, we could use [glob syntax][], which allows us
 to use the `*` wildcard character:
 
-[glob syntax]: https://en.wikipedia.org/wiki/Glob_(programming)
-
 ```md
 # credential files
 secrets.*
@@ -135,7 +131,7 @@ could do that like this:
 data/*.csv
 ```
 
-For more examples with comments, see the [Git documentation](https://git-scm.com/docs/gitignore).
+For more examples with comments, see the [Git documentation][].
 
 ### Useful Defaults
 
@@ -146,9 +142,6 @@ Outside of these narrow use cases, there are resources available for developing
 `.gitignore` files that are appropriate for your type of project in general. For
 example, GitHub maintains templates for a wide range of languages and tools
 (e.g., [Python][python-gitignore], [JavaScript][node-gitignore]).
-
-[python-gitignore]: https://github.com/github/gitignore/blob/main/Python.gitignore
-[node-gitignore]: https://github.com/github/gitignore/blob/main/Node.gitignore
 
 There is also a tool called [gitignore.io][] that will help you identify useful
 `.gitignore` lines for your operating system or code editor. If you take a look
@@ -193,16 +186,12 @@ your Git history. This can be fairly complicated (see this [blog post][]
 for more details) so it's always better to add things to `.gitignore` sooner
 rather than later!
 
-[blog post]: https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a?sk=c3763d466c7f2528008c3777192dfb95
-
 ### Telling Git Not to Ignore
 
 Many developer setups will include a [global `.gitignore`
 file][global-gitignore]. This file is not located within a specific repository,
 and can be especially useful for OS-related settings (e.g. ignoring `.DS_Store`
 on a Mac).
-
-[global-gitignore]: ttps://sebastiandedeyne.com/setting-up-a-global-gitignore-file/
 
 Sometimes you might want to override these global settings for the current
 repository, particularly if your global `.gitignore` is relatively broad. To do
@@ -236,4 +225,11 @@ writing your own `.gitignore` lines most of the time, and that you always make
 sure to add private or too-large files to the `.gitignore` as soon as possible
 so you don't have to rewrite your Git history.
 
+[size-limits]: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+[glob syntax]: https://en.wikipedia.org/wiki/Glob_(programming)
+[Git documentation]: https://git-scm.com/docs/gitignore
+[python-gitignore]: https://github.com/github/gitignore/blob/main/Python.gitignore
+[node-gitignore]: https://github.com/github/gitignore/blob/main/Node.gitignore
+[blog post]: https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a?sk=c3763d466c7f2528008c3777192dfb95
+[global-gitignore]: ttps://sebastiandedeyne.com/setting-up-a-global-gitignore-file/
 [gitignore.io]: https://gitignore.io

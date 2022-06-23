@@ -205,6 +205,64 @@ repository, you could add this to the `.gitignore`:
 !log.txt
 ```
 
+## Example
+
+Let's go back to our todo's project that we created earlier and get it set up
+with a `.gitignore` file. Start by navigating back into that directory, then
+create a new file, `secrets.yml`, and add the following to it:
+
+```yml
+secret_password: 12345678
+```
+
+Run `git status`; you should see the following:
+
+```console
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	secrets.yml
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Next, create the `.gitignore` file and run `git status` again. You should now
+see both files listed as untracked:
+
+```console
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	secrets.yml
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Finally, add the following to the `.gitignore` file and save it:
+
+```text
+# credential files
+secrets.yml
+```
+
+Now, if you run `git status` one more time, you'll see that Git is "ignoring"
+the `secrets.yml` file, just as we want:
+
+```console
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+We can now continue to make changes and commit them, without worrying that our
+secret password will accidentally get posted to GitHub.
+
 ## Check for Understanding
 
 Before moving on to the next lesson, check for your understanding of this
